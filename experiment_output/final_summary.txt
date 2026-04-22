@@ -1,0 +1,71 @@
+
+============================================================
+       EXPERIMENT RESULTS & STATISTICAL ANALYSIS
+============================================================
+
+--- HYPERPARAMETER LANDSCAPE DIAGNOSTICS ---
+  Min objective  : -0.136778
+  Max objective  : 0.023848
+  Std deviation  : 0.022891
+  Mean stability score (all methods): 2.083902e-03
+
+--- NON-DEGENERACY CHECK ---
+  Objective range (max - min): 0.160627
+  ✅ Landscape is non-degenerate (range > 0.001)
+
+--- Method: Grid Search ---
+Final Best Objective : 0.021067 ± 0.000340
+Sample Efficiency    : 58.4 evals to 95% threshold
+Best Hyperparameters : mean λ = 4.6416, mean γ = 67.9691
+Objective Decomp     : Return = 0.025261 | Risk = 0.001569 | Stability = 0.000211
+Global Avg Stability : 2.764862e-03
+Convergence [10, 25, 50, 100]: 0.0037 → 0.0037 → 0.0038 → 0.0211
+
+--- Method: Random Search ---
+Final Best Objective : 0.021335 ± 0.000761
+Sample Efficiency    : 3.6 evals to 95% threshold
+Best Hyperparameters : mean λ = 3.6147, mean γ = 30.2107
+Objective Decomp     : Return = 0.028734 | Risk = 0.002524 | Stability = 0.000470
+Global Avg Stability : 2.701739e-03
+Convergence [10, 25, 50, 100]: 0.0188 → 0.0201 → 0.0210 → 0.0213
+
+--- Method: Hybrid Search ---
+Final Best Objective : 0.022688 ± 0.000899
+Sample Efficiency    : 3.1 evals to 95% threshold
+Best Hyperparameters : mean λ = 3.0237, mean γ = 30.6145
+Objective Decomp     : Return = 0.031316 | Risk = 0.003375 | Stability = 0.000376
+Global Avg Stability : 1.440904e-03
+Convergence [10, 25, 50, 100]: 0.0182 → 0.0193 → 0.0220 → 0.0227
+
+--- Method: LLM Search ---
+Final Best Objective : 0.021306 ± 0.001051
+Sample Efficiency    : 4.0 evals to 95% threshold
+Best Hyperparameters : mean λ = 3.9584, mean γ = 14.8517
+Objective Decomp     : Return = 0.028050 | Risk = 0.002362 | Stability = 0.000404
+Global Avg Stability : 1.428104e-03
+Convergence [10, 25, 50, 100]: 0.0187 → 0.0204 → 0.0210 → 0.0213
+
+------------------------------------------------------------
+        STATISTICAL COMPARISON (WELCH T-TESTS)
+------------------------------------------------------------
+Grid Search               vs Random Search            : p = 0.3293    (t = -1.015)
+Grid Search               vs Hybrid Search            : p = 0.0002 *  (t = -5.332)
+Grid Search               vs LLM Search               : p = 0.5080    (t = -0.684)
+Random Search             vs Hybrid Search            : p = 0.0020 *  (t = -3.631)
+Random Search             vs LLM Search               : p = 0.9455    (t = 0.069)
+Hybrid Search             vs LLM Search               : p = 0.0056 *  (t = 3.158)
+
+------------------------------------------------------------
+      TOP 10 HYPERPARAMETER COMBINATIONS OVERALL
+------------------------------------------------------------
+       method   lambda     gamma  objective_value  mean_return  mean_risk  stability_score
+Hybrid Search 2.244438 80.938610         0.023848     0.035860   0.005074         0.000373
+Hybrid Search 2.389014 23.931900         0.023469     0.034672   0.004540         0.000425
+Hybrid Search 2.820686 32.254769         0.023376     0.031699   0.003397         0.000306
+Hybrid Search 2.820686 32.254769         0.023059     0.031699   0.003397         0.000369
+Hybrid Search 2.958541 89.794651         0.023056     0.030899   0.003132         0.000316
+Hybrid Search 2.193608 24.990896         0.023042     0.036308   0.005255         0.000551
+Hybrid Search 2.820686 32.254769         0.023005     0.031699   0.003397         0.000380
+Hybrid Search 2.685776 15.557846         0.022992     0.032569   0.003700         0.000435
+Hybrid Search 2.685776 15.557846         0.022989     0.032569   0.003700         0.000436
+Hybrid Search 3.187288 26.323684         0.022846     0.029829   0.002770         0.000289
