@@ -1,8 +1,5 @@
 # Hyperparameter Optimisation of Convex Portfolio Trajectories Using Large Language Models
-
-**Author:** Sayash Raaj
 <br>
-[LinkedIn](https://www.linkedin.com/in/sayashraaj/)
 
 ## Overview
 
